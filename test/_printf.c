@@ -1,18 +1,6 @@
 #include "main.h"
 
 /**
- * _printf_char - function to deal with c
- *
- * @ch: int
- *
- * Return: int
-*/
-int _printf_char(int ch)
-{
-	return (write(1, &ch, 1));
-}
-
-/**
  * _printf - printf function
  *
  * @format: char *
@@ -42,7 +30,8 @@ int _printf(const char *format, ...)
 				break;
 			if (*format == 'c')
 			{
-				_printf_char(va_arg(ap, int));
+				char ch = va_arg(ap, int);
+				write(1, &ch, 1);
 				no_of_char++;
 			}
 			else if (*format == 's')
