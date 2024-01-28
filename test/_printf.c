@@ -48,9 +48,13 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				char *str = va_arg(ap, char *);
+				int str_len = 0;
 
-				write(1, str, strlen(str));
-				no_of_char += strlen(str);
+				while (str[str_len] != '\0')
+					str_len++;
+
+				write(1, str, str_len);
+				no_of_char += str_len;
 			}
 			else if (*format == '%')
 			{
