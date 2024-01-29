@@ -25,9 +25,11 @@ int _printf(const char *format, ...)
 	int no_of_char = 0;
 	va_list ap;
 
+	va_start(ap, format);
+
 	if (format == NULL)
 		return (-1);
-	va_start(ap, format);
+
 	while (*format != '\0')
 	{
 		if (*format != '%')
