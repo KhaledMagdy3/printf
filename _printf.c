@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == '\0')
-				break;
+				return (-1);
 			if (*format == 'c')
 			{
 				_printf_char(va_arg(ap, int));
