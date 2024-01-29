@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			no_of_char += print_casses(format, ap);
+			no_of_char += print_casses(*format, ap);
 		}
 
 		format++;
