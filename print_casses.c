@@ -25,6 +25,9 @@ int print_casses(char format, va_list ap)
 	else if (format == '%')
 		no_of_char += write(1, &format, 1);
 
+	else if (format == 'd')
+		no_of_char += print_digit((long)(va_arg(ap, int)), 10);
+
 	else
 		no_of_char += write(1, &format, 1);
 
