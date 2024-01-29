@@ -20,13 +20,16 @@ int _print_str(char *str)
  *			}
 */
 	int no_of_char = 0;
+	char *str = va_arg(ap, char *);
 
-	while (*str != '\0')
-	{
-		_printf_char((int)*str);
-		no_of_char++;
-		str++;
-	}
-
+/**	while (*str != '\0')
+ *	{
+ *		_printf_char((int)*str);
+ *		no_of_char++;
+ *		str++;
+ *	}
+*/
+	write(1, str, strlen(str));
+	no_of_char += strlen(str);
 	return (no_of_char);
 }
