@@ -9,5 +9,5 @@
 */
 int _printf_char(int ch)
 {
-	return (write(1, &ch, 1));
+	return (write(STDOUT_FILENO, &ch, 1));
 }

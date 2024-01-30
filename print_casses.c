@@ -23,13 +23,13 @@ int print_casses(char format, va_list ap)
 		no_of_char += _print_str(va_arg(ap, char *));
 
 	else if (format == '%')
-		no_of_char += write(1, &format, 1);
+		no_of_char += write(STDOUT_FILENO, &format, 1);
 
-	else if (format == 'd')
+	else if ((format == 'd') || (format == 'i'))
 		no_of_char += print_digit((long)(va_arg(ap, int)), 10);
 
 	else
-		no_of_char += write(1, &format, 1);
+		no_of_char += write(STDOUT_FILENO, &format, 1);
 
 	return (no_of_char);
 }
