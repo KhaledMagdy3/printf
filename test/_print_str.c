@@ -19,13 +19,17 @@ int _print_str(char *str)
  *				no_of_char += strlen(str);
  *			}
 */
-	int no_of_char;
+	int no_of_char = 0;
 
 	if (str == NULL)
 		str = "(null)";
 
-	no_of_char = strlen(str);
-	write(STDOUT_FILENO, str, no_of_char);
+	while (*str != '\0')
+	{
+		_printf_char((int)*str);
+		no_of_char++;
+		str++;
+	}
 
 	return (no_of_char);
 }
