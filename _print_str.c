@@ -10,15 +10,7 @@
 
 int _print_str(char *str)
 {
-/**
- *			else if (*format == 's')
- *			{
- *				char *str = va_arg(ap, char *);
- *
- *				write(1, str, strlen(str));
- *				no_of_char += strlen(str);
- *			}
-*/
+
 	int no_of_char;
 
 	if (str == NULL)
