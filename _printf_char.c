@@ -9,5 +9,7 @@
 */
 int _printf_char(int ch)
 {
-	return (write(STDOUT_FILENO, &ch, 1));
+	write(STDOUT_FILENO, &ch, 1);
+
+	return (1);
 }
