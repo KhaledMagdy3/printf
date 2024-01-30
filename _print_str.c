@@ -21,6 +21,9 @@ int _print_str(char *str)
 */
 	int no_of_char = 0;
 
+	if (str == NULL)
+		str = "(null)";
+
 	while (*str != '\0')
 	{
 		_printf_char((int)*str);
