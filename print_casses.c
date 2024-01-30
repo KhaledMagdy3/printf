@@ -28,6 +28,9 @@ int print_casses(char format, va_list ap)
 	else if ((format == 'd') || (format == 'i'))
 		no_of_char += print_digit((long)(va_arg(ap, int)), 10);
 
+	else if (format == 'x')
+		no_of_char += print_digit((long)(va_arg(ap, unsigned int)), 16);
+
 	else if (format == 'b')
 		no_of_char += _print_binary(va_arg(ap, int));
 
